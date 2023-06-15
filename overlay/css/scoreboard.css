@@ -1,0 +1,180 @@
+@font-face {
+	font-family: 'p4pc';
+	src:url('fonts/LeagueGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'p4pcscore';
+	src:url('fonts/earthsmightiestexpand.ttf') format('truetype');
+}
+
+.playertag {
+	position: absolute;
+	width:330px;
+	letter-spacing: 1px;
+	font-size:40px;
+	text-transform: uppercase;
+	text-shadow: 
+	    2px 2px #000,
+		2px 2px #000;
+}
+
+.playerscore {
+	position:absolute;
+	width:47px;
+	font-family: p4pcscore, Arial, Helvetica, sans-serif;
+	font-size:40px;
+	text-align:center;
+	font-weight: bold;
+	text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; 
+}
+
+body {
+	margin:0px;
+	background-color: rgba(0, 0, 0, 0);
+	font-family:  p4pc;
+	color:#FFFFFF;/*#FFFFFF*/
+}
+
+#board {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url('../images/scoreboard/Scoreboard_Round.png');
+}
+
+#countrymask {
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:1920px;
+	height:1080px;
+	opacity: 1;
+	mask-mode:alpha;
+	mask-size: 100%;
+	-webkit-mask-image: url('../images/scoreboard/countryboard_masks.png');
+}
+
+#p1board {
+	position: absolute;
+	top: 4px;
+	left: 175px;
+	width:550px;
+	height:50px;
+	background-repeat: no-repeat;
+	z-index: 1;
+	background-image:url('../images/scoreboard/Left_Scoreboard.png');
+}
+
+#p1countryboard {
+	position: absolute;
+	top: 4px;
+	left: 213px;
+	width: 85px;
+	height:50px;
+	opacity: 0;
+	z-index: -1;
+	background-image:url('../images/scoreboard/Left_CountryBoard.png');
+}
+
+#p1countryflag {
+	position: absolute;
+	width: 85px;
+	height: 50px;
+	opacity: .9;
+	mask-mode:alpha;
+	mask-size: 100%;
+	-webkit-mask-image: url('../images/scoreboard/leftmask.png');
+}
+
+#p2board {
+	position: absolute;
+	top: 5px;
+	left: 1200px;
+	width:550px;
+	text-align:left;
+	background-repeat: no-repeat;
+	height:50px;
+	z-index: 1;
+	background-image:url('../images/scoreboard/Right_Scoreboard.png');
+}
+
+#p2countryboard {
+	position: absolute;
+	top: 4px;
+	left: 1626px;
+	width: 85px;
+	height:50px;
+	opacity: 0;
+	z-index: -1;
+	background-image:url('../images/scoreboard/Right_CountryBoard.png');
+}
+
+#p2countryflag {
+	position: absolute;
+	width: 85px;
+	height: 50px;
+	opacity: .9;
+	mask-mode:alpha;
+	mask-size: 100%;
+	-webkit-mask-image: url('../images/scoreboard/rightmask.png');
+}
+
+#pName1 {
+	left:300px;
+	top:9px;
+	z-index: 3;
+	width: 345px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#pName2 {
+	left:1275px;
+	top:8px;
+	width: 345px;
+	text-align:right;
+	z-index: 3;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#pScore1 {
+	left:661px;
+	top:7px;
+	z-index: 3;
+	width: 54px;
+	text-align:center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#pScore2 {
+	left:1210px;
+	top:7px;
+	z-index: 3;
+	width: 54px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#mText3 {
+	color: #FFF;
+	position: absolute;
+	left: 810px;
+	top: 4px;
+	width: 300px; 
+  	overflow: hidden;
+	white-space: nowrap;
+	font-size: 35px;
+	font-family: p4pc;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 
+	    2px 2px #000,
+		2px 2px #000;
+}
