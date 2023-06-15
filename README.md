@@ -30,6 +30,6 @@ Refer to the [usage doc](https://pastebin.com/8UTkTzF5) for a list of commands
 
 Developed by Jolteo_
 
-## How it works
+## Edit permissions
 
-Within the `overlay` folder there are
+To request edit permissions, contact Jolteo_ in the PFC discord server. Permissions will be given based on need.
