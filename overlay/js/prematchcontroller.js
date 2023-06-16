@@ -159,7 +159,7 @@ function updateBoard(){
             complete:function(){
                 let shadow = jsonDoc.p1c.slice(0,6);
                 let name = "";
-                if(shadow=="Shadow") name=jsonDoc.p1c.slice(7);
+                if(shadow=="Shadow" && jsonDoc.p1c !="Shadow Labrys") name=jsonDoc.p1c.slice(7);
                 else name = jsonDoc.p1c;
                 if(name=="") name = 'Blank'
                 $('#p1chartitle').attr('src', `../images/titles/${name} Title.png`).attr('height', 150).attr('width', 338);
@@ -211,7 +211,7 @@ function updateBoard(){
             complete:function(){
                 let shadow = jsonDoc.p2c.slice(0,6);
                 let name = "";
-                if(shadow=="Shadow") name = jsonDoc.p2c.slice(7);
+                if(shadow=="Shadow" && jsonDoc.p2c !="Shadow Labrys") name = jsonDoc.p2c.slice(7);
                 else name = jsonDoc.p2c;
                 if(name=="") name = 'Blank'
                 $('#p2chartitle').attr('src', `../images/titles/${name} Title.png`).attr('height', 150).attr('width', 338)
