@@ -1,7 +1,9 @@
 {
     "Players": {},
     "Commentators": {},
-    "Teams": {},
+    "Teams": {
+
+    },
     "Characters": {
         "Yu Narukami": true,
         "Yosuke Hanamura": true,
@@ -27,6 +29,7 @@
     },
     "Matches": {
         "Intermission": "VelvetRoom",
+        "Pools": "RecRoom",
         "Pre Top-8": "RecRoom",
         "Crew Battle": "GreenDarkHour",
         "First to 10": "RedDarkHour",
@@ -34,9 +37,7 @@
         "Losers Finals": "SchoolGateDarkHour",
         "Losers Top-8": "TartarusSchool",
         "Winners Finals": "RedDarkHour",
-        "Winners Top-8": "RedStairwell",
-        "Pools": "RecRoom",
-        "Grand Finals Reset": "RedAltarNoCrystal"
+        "Winners Top-8": "RedStairwell"
     },
     "Navs": [
         "Aigis",

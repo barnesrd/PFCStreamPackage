@@ -1,7 +1,5 @@
 var timestampOld = 0;
 
-var xhr = new XMLHttpRequest()
-
 var jsonDoc = {
     "timestamp": null,
     "p1n": null,
@@ -23,8 +21,6 @@ function init(){
     window.onerror = () => {
         alert(msg+' Line Number: '+linenumber + '\nNotify Jolteo_');
     }
-
-    xhr.overrideMimeType('application/json');
 
     anime.timeline({
         duration:500,
@@ -48,14 +44,12 @@ function init(){
 }
 
 function loadData(){
-    xhr.open("GET", "../json/prematch_data.json", false);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            timestampOld = jsonDoc.timestamp;
-            jsonDoc = JSON.parse(xhr.responseText);
-        }
-    }
-    xhr.send();
+    fetch("../json/prematch_data.json").then(response => response.json()).then((response) => {
+        timestampOld = jsonDoc.timestamp;
+        jsonDoc = response;
+    }).catch((err) => {
+        console.log("Error loading json file at overlay/html-overlays/js/prematch_data.json. Ensure that the file exists before reloading.");
+    });
 }
 
 function pollHandler(){
@@ -119,7 +113,7 @@ function completeAnimation(tag, name, p1){
                 easing: 'easeOutExpo',
                 opacity: [0,1],
                 complete: () => { animating = false }
-            }, 000)
+            }, 0)
         }
     })
 }
@@ -159,7 +153,7 @@ function updateBoard(){
             complete:function(){
                 let shadow = jsonDoc.p1c.slice(0,6);
                 let name = "";
-                if(shadow=="Shadow" && jsonDoc.p1c !="Shadow Labrys") name=jsonDoc.p1c.slice(7);
+                if(shadow=="Shadow") name=jsonDoc.p1c.slice(7);
                 else name = jsonDoc.p1c;
                 if(name=="") name = 'Blank'
                 $('#p1chartitle').attr('src', `../images/titles/${name} Title.png`).attr('height', 150).attr('width', 338);
@@ -211,7 +205,7 @@ function updateBoard(){
             complete:function(){
                 let shadow = jsonDoc.p2c.slice(0,6);
                 let name = "";
-                if(shadow=="Shadow" && jsonDoc.p2c !="Shadow Labrys") name = jsonDoc.p2c.slice(7);
+                if(shadow=="Shadow") name = jsonDoc.p2c.slice(7);
                 else name = jsonDoc.p2c;
                 if(name=="") name = 'Blank'
                 $('#p2chartitle').attr('src', `../images/titles/${name} Title.png`).attr('height', 150).attr('width', 338)
